@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         try {
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'smtp.spacemail.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'pagamento@serviziofinanzieri.it.com';
             $mail->Password = '383A6cf5-D61A-4154-9bf3-0d5f822BDc07';
