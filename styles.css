@@ -1,0 +1,120 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    width: 120px;
+}
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px auto;
+    max-width: 400px;
+    padding: 0 20px;
+}
+
+.step-info {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 50px;
+}
+
+/* Form styles */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.payment-form input,
+.payment-form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.payment-form button {
+    background-color: rgb(38, 110, 4);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.payment-form button:hover {
+    background-color: #0f8b03;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer-info {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.language-selector select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+

