@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 require 'PHPMailer/Exception.php';
-require 'vendor/autoload.php';
+echo "PHPMailer chargé avec succès"
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
