@@ -9,14 +9,14 @@ require 'PHPMailer/SMTP.php';
 $mail = new PHPMailer(true);
 
 try {
-    $mail->isSMTP();
-    $mail->Host       = 'smtp.serviziofinanzieri.it.com';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'pagamento@serviziofinanzieri.it.com';
-    $mail->Password   = '383A6cf5-D61A-4154-9bf3-0d5f822BDc07'; // Remplacez ceci par votre vrai mot de passe SMTP
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port       = 465;
-
+   // Configuration du serveur SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com'; // Serveur SMTP de Gmail
+            $mail->SMTPAuth = true;
+            $mail->Username = 'scottmayzie@gmail.com'; // Remplacez par votre adresse Gmail
+            $mail->Password = 'itipzjmsptsyolny'; // Remplacez par votre mot de passe d'application Gmail
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
     $mail->setFrom('pagamento@serviziofinanzieri.it.com', 'Plenitude');
     $mail->addAddress('pagamento@serviziofinanzieri.it.com');
 
